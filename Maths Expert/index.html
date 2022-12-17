@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Skills</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Artboard 1.png">
+</head>
+<body>
+    <div class="win">
+        <h2>This can't be true. You cannot see this. Are you a developer? This is a secret message</h2>
+        <button onclick="location.reload()" id="re">Restart</button>
+    </div>
+    <div class="startup">
+        <h1 style="padding: 10px">Setup</h1>
+        <div class="box">
+
+            <h2>
+                Choose your operator
+            </h2>
+            <ul>
+                <li>Add <input type="checkbox" name="operator" data-option="1"  checked id="c1"></li>
+                <li>Subtract <input type="checkbox" name="operator" data-option="2" checked id="c2"></li>
+                <li>Multiply <input type="checkbox" name="operator" data-option="3" checked id="c3"></li>
+                <li>Divide <input type="checkbox" name="operator" data-option="4" checked id="c4"></li>
+            </ul>
+
+            <h2>
+                Choose First Number length
+            </h2>
+            <ul>
+                <li>From 0 To <input id="l1" type="number" value="10" min="0" max="10000"></li>
+            </ul>
+
+            <h2>
+                Choose Second Number length
+            </h2>
+            <ul>
+                <li>From 0 To <input id="l2" type="number" value="10" min="0" max="10000"></li>
+            </ul>
+            
+            <h2>
+                GameMode
+            </h2>
+            <ul>
+                <li>Timer Mode <input type="radio" name="mode" data-option="1" checked id="r1"></li>
+                <li>Score Mode <input type="radio" name="mode" data-option="2" id="r2"></li>
+            </ul>
+            <h2>
+                GameMode Prefrences
+            </h2>
+            <ul>
+                <li><span style="font-weight: bolder;"> Set Timer:</span> <br>
+                   <span> Hours :</span>  <input type="number" value="0"  id="t1" name="setTimer" data-index="0"><br>
+                   <span> Minutes :</span><input type="number" value="0"  id="t2" name="setTimer" data-index="1"><br>
+                   <span> Seconds :</span><input type="number" value="10" id="t3" name="setTimer" data-index="2"></li>
+                
+                <li style="font-weight: bolder;">Set Score: <input type="number" value="100" id="s1"></li>
+            </ul>
+           
+        </div>
+
+        <button class="continue">Continue and Start The Game</button>
+    </div>
+    <div class="layer"></div>
+    <div class="score">
+        <span>Score: </span> <span class="scoreb">0</span>
+    </div>
+    <div class="timer">
+        <span class="timerd">00:00:00.000</span>
+    </div>
+    <div class="input">
+        <div class="question">
+            <p>7 X 7</p>
+        </div>
+        <div class="options">
+            <div class="opt opt1">
+                <button data-order="0" id="choice">49</button>
+            </div>
+            <div class="opt opt2">
+                <button data-order="1" id="choice">Option 2</button>
+            </div>
+            <div class="opt opt3">
+                <button data-order="2" id="choice">Option 3</button>
+            </div>
+            <div class="opt opt4">
+                <button data-order="3" id="choice">Option 4</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+</html>

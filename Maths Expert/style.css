@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+:root{
+    --aspect: 70%;
+    --btn-padding: 45px;
+    --radius: 25px;
+    --font-s: 2em;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    background: url(./background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+div.input{
+    min-height: var(--aspect);
+    width: var(--aspect);
+    background-color: transparent;
+    display: grid;
+    grid-template-rows: 35% 65%;
+    border-radius: var(--radius);
+    transition: 0.5s;
+}
+div.input:hover{
+    background-color: rgba(0, 128, 128, 0.4);
+}
+div.input div.question{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: normal;
+    font-size: 3.25em;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 40px;
+}
+div.input div.options{
+    height: 100%;
+    width: 100%;
+    /*display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    place-items: center;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+button#choice{
+    font-size: var(--font-s);
+    padding: var(--btn-padding);
+    padding-left: calc(var(--btn-padding)*2);
+    padding-right: calc(var(--btn-padding)*2);
+    border: 5px solid rgb(113, 255, 184);
+    background-color: transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.5s box-shadow, 0.1s background;
+    color: white;
+}
+button#choice:hover{
+    box-shadow: 0 0 10px 15px rgb(0, 255, 128);
+}
+button#choice:active{
+    color:rgb(0, 116, 104);
+    background-color: rgb(113, 255, 184);
+}
+
+
+div.score{
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left:calc(100% - 10px);
+    transform: translateX(calc(-100% - 10px));
+}
+
+@media only screen and (max-width: 770px){
+    button{
+        --font-s: 3vw;
+        --btn-padding:5vw;
+    }
+}
+
+span.timerd{
+    font-family: 'Orbitron', sans-serif;font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left:0;
+    transform: translateX(10px);
+    
+}
+div.startup{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 400px;
+    background-color: white;
+    z-index: 5;
+    color: black;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(0,0,0,0.5) 0 0 200px 150px;
+    justify-content: center;
+}
+div.layer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 4;
+}
+input[type=checkbox]{
+    appearance: none;
+    height: 2em;
+    width: 4em;
+    background-color: teal;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    filter: grayscale(1);
+}
+input[type=checkbox]::before{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1.7em;
+    width: 1.7em;
+    border-radius: 50px;
+    background-color: cyan;
+    top:50%;
+    transform: translateY(-50%) translateX(10%);
+    transition: transform 0.5s ease-in-out;
+}
+input[type=checkbox]:checked::before{
+    transform: translateY(-50%) translateX(120%);
+}
+input[type=checkbox]:active::before{
+    background-color: lightcyan;
+}
+input[type=checkbox]:active{
+    transform: scale(1.05);
+}
+input[type=checkbox]:checked{
+    filter: grayscale(0);
+}
+
+
+input[type=radio]{
+    appearance: none;
+    height: 2em;
+    width: 4em;
+    background-color: teal;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    filter: grayscale(1);
+}
+input[type=radio]::before{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1.7em;
+    width: 1.7em;
+    border-radius: 50px;
+    background-color: cyan;
+    top:50%;
+    transform: translateY(-50%) translateX(10%);
+    transition: transform 0.5s ease-in-out;
+}
+input[type=radio]:checked::before{
+    transform: translateY(-50%) translateX(120%);
+}
+input[type=radio]:active::before{
+    background-color: lightcyan;
+}
+input[type=radio]:active{
+    transform: scale(1.05);
+}
+input[type=radio]:checked{
+    filter: grayscale(0);
+}
+
+button.continue , button#re{
+    position: absolute;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #02e3ab;
+    cursor: pointer;
+    bottom: 30px;
+    transition: filter 0.5s;
+    filter: grayscale(0);
+    
+}
+button.continue:active , button#re:active{
+    transform:scale(0.9);
+}
+button.continue:disabled , button#re:disabled{
+    filter: grayscale(1);
+}
+button.continue:disabled:active , button#re:disabled:active{
+    transform: scale(1);
+}
+
+div.box{
+    background: white;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 170px);
+    top: 65px;
+    overflow-y: auto;
+}
+div.box ul li{
+    position: relative;
+    padding: 20px;
+    font-size: 25px;
+}
+div.box ul li input{
+    position: absolute;
+    right: 20px;
+}
+input[type="number"]{
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    background-color: white;
+    border: 0;
+    font-size: 20px;
+    width: 100px;
+    border-bottom: 0px solid green; 
+}
+input[type="number"]:focus{
+    border-bottom: 5px solid green; 
+}
+
+div.win{
+    position: absolute;
+    display: none;
+    height: 80%;
+    width: 80%;
+    z-index: 10;
+    background-color: rgb(232, 255, 229);
+    color: black;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.5) 0 0 200px 150px;
+}
+
+div.win h2{
+    font-size: 72px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
